@@ -141,10 +141,18 @@ def product_airforce1react():
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
         fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = cur.fetchone() 
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("UPDATE accounts SET product1 = %s WHERE email = %s", (value, email))
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()
+            productsid = list(productsid)
+            if id not in productsid:
+                productsid.append(id)
+            cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (userid, str(productsid)))
+
             mysql.connection.commit()
         return render_template('product/airforce1react.html', email = session['email'], fname = fname)
     else:
@@ -318,8 +326,17 @@ def product_paintdrip():
 @app.route("/cart")
 def cart():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute("SELECT * FROM accounts WHERE email = %s", (session['email'],))
-    return render_template("cart.html")
+    cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
+    userid = cur.fetchone()
+    cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+    productsid = cur.fetchone()
+    products = []
+    productsid = list(productsid)
+    for productid in productsid:
+        cur.execute("SELECT * FROM products WHERE id = %s", (productid))
+        productdetails = cur.fetchone()
+        products.append(productdetails[1], productdetails[2])
+    return render_template("cart.html", products=products)
 
 # Error Handlers
 @app.errorhandler(404)
