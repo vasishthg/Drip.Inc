@@ -39,7 +39,7 @@
         <a href="/all" class="navlink navcenter">Shop All</a>
       </center>
       <div class="nav-things">
-        <img class="navthings" src="{{url_for('static', filename='cart.svg')}}">
+        <img class="navthings"onclick="window.location.replace('/cart')" src="{{url_for('static', filename='cart.svg')}}">
         <img class="navthings" src="{{url_for('static', filename='search.svg')}}">
         <img class="navthings" id="userr" src="{{url_for('static', filename='user.svg')}}">
         <div class="user-nav">

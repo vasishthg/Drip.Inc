@@ -600,19 +600,23 @@ def product_paintdrip():
 @app.route("/cart")
 def cart():
     if 'loggedin' in session:
+        # cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        # cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
+        # userid = str(cur.fetchone()['id'])
+        # cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+        # productsid = cur.fetchone()['productsid']
+        # products = []
+        # productsid = list(productsid)
+        # for productid in productsid:
+        #     cur.execute("SELECT * FROM product WHERE id = %s", (productid))
+        #     productdetails = cur.fetchone()
+        #     print (productdetails)
+        #     products.append(productdetails[1], productdetails[2])
+        email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
-        userid = str(cur.fetchone()['id'])
-        cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-        productsid = cur.fetchone()['productsid']
-        products = []
-        productsid = list(productsid)
-        for productid in productsid:
-            cur.execute("SELECT * FROM product WHERE id = %s", (productid))
-            productdetails = cur.fetchone()
-            print (productdetails)
-            products.append(productdetails[1], productdetails[2])
-        return render_template("cart.html", products=products)
+        cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
+        fname = cur.fetchone()
+        return render_template('cart.html', email = session['email'], fname = fname, products = 'products')# remove comma when backend dun
     else:
         return redirect("/login")
 # Error Handlers
