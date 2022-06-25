@@ -142,12 +142,12 @@ def product_airforce1react():
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
-        userid = cur.fetchone() 
+        userid = cur.fetchone()[0]
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-            productsid = cursor.fetchone()
+            productsid = cursor.fetchone()[0]
             productsid = list(productsid)
             if id not in productsid:
                 productsid.append(id)
@@ -327,9 +327,9 @@ def product_paintdrip():
 def cart():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
-    userid = cur.fetchone()
+    userid = cur.fetchone()[0]
     cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-    productsid = cur.fetchone()
+    productsid = cur.fetchone()[0]
     products = []
     productsid = list(productsid)
     for productid in productsid:
