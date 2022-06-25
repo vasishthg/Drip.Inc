@@ -162,7 +162,7 @@ def product_airforce1react():
     else:
         return render_template('product/airforce1react.html')
 
-@app.route("/product/nike-air-jordan-1")
+@app.route("/product/nike-air-jordan-1", methods=['GET', 'POST'])
 def product_nikeairjordan1():
     if 'loggedin' in session:
         id = 2
@@ -191,7 +191,7 @@ def product_nikeairjordan1():
     else:
         return render_template('product/airjordan1.html')
 
-@app.route("/product/nike-airjordans-XXXVI-low")
+@app.route("/product/nike-airjordans-XXXVI-low", methods=['GET', 'POST'])
 def product_nikeairjordanxxxvilow():
     if 'loggedin' in session:
         id = 3
@@ -220,7 +220,7 @@ def product_nikeairjordanxxxvilow():
     else:
         return render_template('product/AirJordansXXXVILow.html')
 
-@app.route("/product/nike-zoomx-invincible-run-flyknit-2")
+@app.route("/product/nike-zoomx-invincible-run-flyknit-2", methods=['GET', 'POST'])
 def product_zoomxinvinciblerunflyknit2():
     if 'loggedin' in session:
         id = 4
@@ -249,7 +249,7 @@ def product_zoomxinvinciblerunflyknit2():
     else:
         return render_template('product/zoomxinvinciblerunflyknit2.html')
 
-@app.route("/product/nike-air-max-97")
+@app.route("/product/nike-air-max-97", methods=['GET', 'POST'])
 def product_airmax97():
     if 'loggedin' in session:
         id = 5
@@ -278,7 +278,7 @@ def product_airmax97():
     else:
         return render_template('product/airmax97.html')
 
-@app.route("/product/nike-air-max-plus-og")
+@app.route("/product/nike-air-max-plus-og", methods=['GET', 'POST'])
 def product_airmaxplusog():
     if 'loggedin' in session:
         id = 6
@@ -307,7 +307,7 @@ def product_airmaxplusog():
     else:
         return render_template('product/airmaxplusog.html')
 
-@app.route("/product/converse-taylor-all-star-classic")
+@app.route("/product/converse-taylor-all-star-classic", methods=['GET', 'POST'])
 def product_chucktaylorallstarclassic():
     if 'loggedin' in session:
         id = 7
@@ -336,7 +336,7 @@ def product_chucktaylorallstarclassic():
     else:
         return render_template('product/taylorallstarclassic.html')
 
-@app.route("/product/nike-dunks-violet")
+@app.route("/product/nike-dunks-violet", methods=['GET', 'POST'])
 def product_dunksviolet():
     if 'loggedin' in session:
         id = 8
@@ -365,7 +365,7 @@ def product_dunksviolet():
     else:
         return render_template('product/dunksvioletagednavy.html')
         
-@app.route("/product/nike-sb-nyjah-free-2")
+@app.route("/product/nike-sb-nyjah-free-2", methods=['GET', 'POST'])
 def product_sbnyjah():
     if 'loggedin' in session:
         id = 9
@@ -394,7 +394,7 @@ def product_sbnyjah():
     else:
         return render_template('product/sbnyjahfree2.html')
 
-@app.route("/product/superdry-premium-beach-sliders")
+@app.route("/product/superdry-premium-beach-sliders", methods=['GET', 'POST'])
 def product_beachsliders():
     if 'loggedin' in session:
         id = 10
@@ -423,7 +423,7 @@ def product_beachsliders():
     else:
         return render_template('product/beachsliders.html')
 
-@app.route("/product/nike-tiempo-legend-9-elite-FG")
+@app.route("/product/nike-tiempo-legend-9-elite-FG", methods=['GET', 'POST'])
 def product_tiempolegend9elite():
     if 'loggedin' in session:
         id = 11
@@ -452,7 +452,7 @@ def product_tiempolegend9elite():
     else:
         return render_template('product/tiempolegend9.html')
 
-@app.route("/product/vans-sk8-hi")
+@app.route("/product/vans-sk8-hi", methods=['GET', 'POST'])
 def product_vanssk8hi():
     if 'loggedin' in session:
         id = 12
@@ -481,7 +481,7 @@ def product_vanssk8hi():
     else:
         return render_template('product/vanssk8hi.html')
 
-@app.route("/product/adidas-M-FI-CB-OH")
+@app.route("/product/adidas-M-FI-CB-OH", methods=['GET', 'POST'])
 def product_MFICBOH():
     if 'loggedin' in session:
         id = 13
@@ -510,7 +510,7 @@ def product_MFICBOH():
     else:
         return render_template('product/MFICBOH.html')
 
-@app.route("/product/nike-jordan-air")
+@app.route("/product/nike-jordan-air", methods=['GET', 'POST'])
 def product_jordanair():
     if 'loggedin' in session:
         id = 14
@@ -539,7 +539,7 @@ def product_jordanair():
     else:
         return render_template('product/jordanair.html')
 
-@app.route("/product/vans-daniel-johnston-hoodie")
+@app.route("/product/vans-daniel-johnston-hoodie", methods=['GET', 'POST'])
 def product_vansxdanieljohnston():
     if 'loggedin' in session:
         id = 15
@@ -568,7 +568,7 @@ def product_vansxdanieljohnston():
     else:
         return render_template('product/vansxdaniel.html')
 
-@app.route("/product/converse-paint-drip-graphic-hoodie")
+@app.route("/product/converse-paint-drip-graphic-hoodie", methods=['GET', 'POST'])
 def product_paintdrip():
     if 'loggedin' in session:
         id = 16
@@ -599,19 +599,22 @@ def product_paintdrip():
 
 @app.route("/cart")
 def cart():
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
-    userid = cur.fetchone()
-    cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-    productsid = cur.fetchone()
-    products = []
-    productsid = list(productsid)
-    for productid in productsid:
-        cur.execute("SELECT * FROM products WHERE id = %s", (productid))
-        productdetails = cur.fetchone()
-        products.append(productdetails[1], productdetails[2])
-    return render_template("cart.html", products=products)
-
+    if 'loggedin' in session:
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
+        userid = str(cur.fetchone()['id'])
+        cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+        productsid = cur.fetchone()['productsid']
+        products = []
+        productsid = list(productsid)
+        for productid in productsid:
+            cur.execute("SELECT * FROM product WHERE id = %s", (productid))
+            productdetails = cur.fetchone()
+            print (productdetails)
+            products.append(productdetails[1], productdetails[2])
+        return render_template("cart.html", products=products)
+    else:
+        return redirect("/login")
 # Error Handlers
 @app.errorhandler(404)
 def page_not_found(error):
