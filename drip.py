@@ -142,18 +142,22 @@ def product_airforce1react():
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
-        userid = cur.fetchone()[0]
+        userid = str(cur.fetchone()['id'])
+        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-            productsid = cursor.fetchone()[0]
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
             productsid = list(productsid)
-            if id not in productsid:
+            if str(id) not in productsid:
                 productsid.append(id)
-            cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (userid, str(productsid)))
-
-            mysql.connection.commit()
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/airforce1react.html', email = session['email'], fname = fname)
     else:
         return render_template('product/airforce1react.html')
@@ -161,10 +165,28 @@ def product_airforce1react():
 @app.route("/product/nike-air-jordan-1")
 def product_nikeairjordan1():
     if 'loggedin' in session:
+        id = 2
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/airjordan1.html', email = session['email'], fname = fname)
     else:
         return render_template('product/airjordan1.html')
@@ -172,10 +194,28 @@ def product_nikeairjordan1():
 @app.route("/product/nike-airjordans-XXXVI-low")
 def product_nikeairjordanxxxvilow():
     if 'loggedin' in session:
+        id = 3
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/AirJordansXXXVILow.html', email = session['email'], fname = fname)
     else:
         return render_template('product/AirJordansXXXVILow.html')
@@ -183,10 +223,28 @@ def product_nikeairjordanxxxvilow():
 @app.route("/product/nike-zoomx-invincible-run-flyknit-2")
 def product_zoomxinvinciblerunflyknit2():
     if 'loggedin' in session:
+        id = 4
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/zoomxinvinciblerunflyknit2.html', email = session['email'], fname = fname)
     else:
         return render_template('product/zoomxinvinciblerunflyknit2.html')
@@ -194,10 +252,28 @@ def product_zoomxinvinciblerunflyknit2():
 @app.route("/product/nike-air-max-97")
 def product_airmax97():
     if 'loggedin' in session:
+        id = 5
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/airmax97.html', email = session['email'], fname = fname)
     else:
         return render_template('product/airmax97.html')
@@ -205,10 +281,28 @@ def product_airmax97():
 @app.route("/product/nike-air-max-plus-og")
 def product_airmaxplusog():
     if 'loggedin' in session:
+        id = 6
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/airmaxplusog.html', email = session['email'], fname = fname)
     else:
         return render_template('product/airmaxplusog.html')
@@ -216,10 +310,28 @@ def product_airmaxplusog():
 @app.route("/product/converse-taylor-all-star-classic")
 def product_chucktaylorallstarclassic():
     if 'loggedin' in session:
+        id = 7
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/taylorallstarclassic.html', email = session['email'], fname = fname)
     else:
         return render_template('product/taylorallstarclassic.html')
@@ -227,10 +339,28 @@ def product_chucktaylorallstarclassic():
 @app.route("/product/nike-dunks-violet")
 def product_dunksviolet():
     if 'loggedin' in session:
+        id = 8
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/dunksvioletagednavy.html', email = session['email'], fname = fname)
     else:
         return render_template('product/dunksvioletagednavy.html')
@@ -238,10 +368,28 @@ def product_dunksviolet():
 @app.route("/product/nike-sb-nyjah-free-2")
 def product_sbnyjah():
     if 'loggedin' in session:
+        id = 9
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/sbnyjahfree2.html', email = session['email'], fname = fname)
     else:
         return render_template('product/sbnyjahfree2.html')
@@ -249,10 +397,28 @@ def product_sbnyjah():
 @app.route("/product/superdry-premium-beach-sliders")
 def product_beachsliders():
     if 'loggedin' in session:
+        id = 10
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/beachsliders.html', email = session['email'], fname = fname)
     else:
         return render_template('product/beachsliders.html')
@@ -260,10 +426,28 @@ def product_beachsliders():
 @app.route("/product/nike-tiempo-legend-9-elite-FG")
 def product_tiempolegend9elite():
     if 'loggedin' in session:
+        id = 11
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/tiempolegend9.html', email = session['email'], fname = fname)
     else:
         return render_template('product/tiempolegend9.html')
@@ -271,10 +455,28 @@ def product_tiempolegend9elite():
 @app.route("/product/vans-sk8-hi")
 def product_vanssk8hi():
     if 'loggedin' in session:
+        id = 12
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/vanssk8hi.html', email = session['email'], fname = fname)
     else:
         return render_template('product/vanssk8hi.html')
@@ -282,10 +484,28 @@ def product_vanssk8hi():
 @app.route("/product/adidas-M-FI-CB-OH")
 def product_MFICBOH():
     if 'loggedin' in session:
+        id = 13
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/MFICBOH.html', email = session['email'], fname = fname)
     else:
         return render_template('product/MFICBOH.html')
@@ -293,10 +513,28 @@ def product_MFICBOH():
 @app.route("/product/nike-jordan-air")
 def product_jordanair():
     if 'loggedin' in session:
+        id = 14
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/jordanair.html', email = session['email'], fname = fname)
     else:
         return render_template('product/jordanair.html')
@@ -304,10 +542,28 @@ def product_jordanair():
 @app.route("/product/vans-daniel-johnston-hoodie")
 def product_vansxdanieljohnston():
     if 'loggedin' in session:
+        id = 15
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/vansxdaniel.html', email = session['email'], fname = fname)
     else:
         return render_template('product/vansxdaniel.html')
@@ -315,10 +571,28 @@ def product_vansxdanieljohnston():
 @app.route("/product/converse-paint-drip-graphic-hoodie")
 def product_paintdrip():
     if 'loggedin' in session:
+        id = 16
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
+        userid = str(cur.fetchone()['id'])
+        print (userid)
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
+            productsid = cursor.fetchone()['productsid']
+            print (productsid)
+            productsid = list(productsid)
+            if str(id) not in productsid:
+                productsid.append(id)
+                productsid.remove('[')
+                productsid.remove(']')
+                print(productsid)
+                cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template('product/paintdripgraphic.html', email = session['email'], fname = fname)
     else:
         return render_template('product/paintdripgraphic.html')
@@ -327,9 +601,9 @@ def product_paintdrip():
 def cart():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute("SELECT id FROM accounts WHERE email = %s", (session['email'],))
-    userid = cur.fetchone()[0]
+    userid = cur.fetchone()
     cur.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
-    productsid = cur.fetchone()[0]
+    productsid = cur.fetchone()
     products = []
     productsid = list(productsid)
     for productid in productsid:
