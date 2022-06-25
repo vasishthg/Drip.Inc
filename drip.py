@@ -1,9 +1,7 @@
-from pydoc import render_doc
 from flask import Flask, render_template, session, request, url_for, redirect
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import mysql.connector
-import this
 
 app = Flask("__name__")
 app.secret_key = "drip.inc"
@@ -135,13 +133,19 @@ def accessories():
     return render_template("clothing.html")
 
 # PRODUCTS
-@app.route('/product/nike-air-force-1-react')
+@app.route('/product/nike-air-force-1-react', methods=['GET', 'POST'])
 def product_airforce1react():
     if 'loggedin' in session:
+        id = 1
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
-        fname = cur.fetchone()
+        fname = cur.fetchone() 
+        if request.method == "POST" and 'loggedin' in session:
+            value = "true"
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("UPDATE accounts SET product1 = %s WHERE email = %s", (value, email))
+            mysql.connection.commit()
         return render_template('product/airforce1react.html', email = session['email'], fname = fname)
     else:
         return render_template('product/airforce1react.html')
@@ -310,6 +314,12 @@ def product_paintdrip():
         return render_template('product/paintdripgraphic.html', email = session['email'], fname = fname)
     else:
         return render_template('product/paintdripgraphic.html')
+
+@app.route("/cart")
+def cart():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute("SELECT * FROM accounts WHERE email = %s", (session['email'],))
+    return render_template("cart.html")
 
 # Error Handlers
 @app.errorhandler(404)

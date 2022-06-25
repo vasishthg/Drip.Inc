@@ -891,7 +891,79 @@ footer{
     color: white;
 }
 
+.indexbrands{
+    max-width: 45em;
+    display: none;
+}
+
 .linktoproduct:hover{
     color: white;
     text-decoration: none;
+}
+
+@media screen and (max-width:1096px) {
+    .popular-shoe{
+        display: block;
+        position: relative;
+        margin-left: 50% !important;
+        transform: translateX(-50%);
+        margin-bottom: 2em;
+        width: 100%;
+    }
+    .whyusmain{
+        margin-left: 0 !important;
+        margin-bottom: 2em;
+    }   
+}
+
+@media screen and (max-width:1482px) {
+    .mailform{
+        margin-right: 0;
+        position: relative;
+        display: block;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width:1473px){
+    .mail{
+        position: relative;
+        margin-left: 2em;
+        margin-right: 0;
+        display: inline-block;
+    }
+    .mailtxt{
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+}
+
+@media screen and (max-width:1142px) {
+    .all-shoe{
+        display: block;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1203px){   
+    .new-shoe{
+        display: block;
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+        width: 50%;
+        color: white;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .premiumnew-shoe{
+        display: block;
+        font-family: 'Raleway', sans-serif;
+        width:60%;
+        color: white;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
 }
