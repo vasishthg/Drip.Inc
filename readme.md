@@ -22,3 +22,6 @@ MySQL setup -
         View setup - go to "/static/setup/cart-setup2.png" <br>
         Make sure to include [] in productsid column<br>
         ID and userid is manually inputted by the number of users<br>
+
+
+Run drip.py and open 127.0.0.1:5000
