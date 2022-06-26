@@ -143,19 +143,16 @@ def product_airforce1react():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/airforce1react.html', email = session['email'], fname = fname)
@@ -172,19 +169,16 @@ def product_nikeairjordan1():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/airjordan1.html', email = session['email'], fname = fname)
@@ -201,19 +195,16 @@ def product_nikeairjordanxxxvilow():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/AirJordansXXXVILow.html', email = session['email'], fname = fname)
@@ -230,19 +221,16 @@ def product_zoomxinvinciblerunflyknit2():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/zoomxinvinciblerunflyknit2.html', email = session['email'], fname = fname)
@@ -259,19 +247,16 @@ def product_airmax97():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/airmax97.html', email = session['email'], fname = fname)
@@ -288,19 +273,16 @@ def product_airmaxplusog():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/airmaxplusog.html', email = session['email'], fname = fname)
@@ -317,19 +299,16 @@ def product_chucktaylorallstarclassic():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/taylorallstarclassic.html', email = session['email'], fname = fname)
@@ -346,19 +325,16 @@ def product_dunksviolet():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/dunksvioletagednavy.html', email = session['email'], fname = fname)
@@ -375,19 +351,16 @@ def product_sbnyjah():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/sbnyjahfree2.html', email = session['email'], fname = fname)
@@ -404,19 +377,16 @@ def product_beachsliders():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/beachsliders.html', email = session['email'], fname = fname)
@@ -433,19 +403,16 @@ def product_tiempolegend9elite():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/tiempolegend9.html', email = session['email'], fname = fname)
@@ -462,19 +429,16 @@ def product_vanssk8hi():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/vanssk8hi.html', email = session['email'], fname = fname)
@@ -491,19 +455,16 @@ def product_MFICBOH():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/MFICBOH.html', email = session['email'], fname = fname)
@@ -520,19 +481,16 @@ def product_jordanair():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/jordanair.html', email = session['email'], fname = fname)
@@ -549,19 +507,16 @@ def product_vansxdanieljohnston():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
             value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/vansxdaniel.html', email = session['email'], fname = fname)
@@ -578,19 +533,15 @@ def product_paintdrip():
         fname = cur.fetchone() 
         cur.execute("SELECT id FROM accounts WHERE email = %s", (email,))
         userid = str(cur.fetchone()['id'])
-        print (userid)
         if request.method == "POST" and 'loggedin' in session:
-            value = "true"
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT productsid FROM cart WHERE userid = %s", (userid))
             productsid = cursor.fetchone()['productsid']
-            print (productsid)
             productsid = list(productsid)
             if str(id) not in productsid:
                 productsid.append(id)
                 productsid.remove('[')
                 productsid.remove(']')
-                print(productsid)
                 cursor.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
         return render_template('product/paintdripgraphic.html', email = session['email'], fname = fname)
@@ -608,15 +559,15 @@ def cart():
         products = []
         productsid = list(productsid)
         for productid in productsid:
-            cur.execute("SELECT * FROM product WHERE id = %s", (productid))
-            productdetails = str(cur.fetchone())
-            print (productdetails)
-            products.append([productdetails[1], productdetails[2]])
+            if productid != '[' and productid != ']' and productid != ','  and productid != ' '  and productid != "'" and productid != '"' :
+                cur.execute("SELECT * FROM product WHERE id = %s", (productid))
+                productdetails = cur.fetchone()
+                products.append([productdetails['name'], productdetails['price']])
         email = session['email']
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT fname FROM accounts WHERE email = %s", (email,))
         fname = cur.fetchone()
-        return render_template('cart.html', email = session['email'], fname = fname, products = 'products')# remove comma when backend dun
+        return render_template('cart.html', email = session['email'], fname = fname, products = products)# remove comma when backend dun
     else:
         return redirect("/login")
 # Error Handlers

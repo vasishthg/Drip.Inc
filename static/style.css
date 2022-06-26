@@ -1051,3 +1051,25 @@ footer{
         margin-right: 2em;
     }
 }
+
+@media screen and (max-width:1484px) {
+    .product-imgs-small{
+        margin-left: 2em;
+    }
+}
+
+@media screen and (max-width:1354px) {
+    .product-imgs-small{
+        display: inline;
+    }
+    .product-img-big{
+        margin-top: 0;
+    }
+    .product-about{
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+}
