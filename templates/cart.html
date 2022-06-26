@@ -53,24 +53,12 @@
         {%endif%}
       </div>
       <div class="cartmain">
+        {% for product in products %}
         <div class="cartitem">
-            <p class="productname">Product Name Product Name Lorem Ipsum yes<span class="cartcost">$1200000</span></p>
+            <p class="productname">{{product[0]}} Lorem Ipsum yes<span class="cartcost">${{product[1]}}</span></p>
         </div>
-        <div class="cartitem">
-            <p class="productname">Product Name Product Name Lorem Ipsum yes<span class="cartcost">$1200000</span></p>
-        </div>
-        <div class="cartitem">
-            <p class="productname">Product Name Product Name Lorem Ipsum yes<span class="cartcost">$1200000</span></p>
-        </div>
-        <div class="cartitem">
-            <p class="productname">Air Force 1 React<span class="cartcost">$1200000</span></p>
-        </div>
-        <div class="cartitem">
-            <p class="productname">Product Name Product Name Lorem Ipsum yes<span class="cartcost">$1200000</span></p>
-        </div>
-        <div class="cartitem">
-            <p class="productname">Product Name Product Name Lorem Ipsum yes<span class="cartcost">$1200000</span></p>
-        </div>
+       
+         {% endfor %}
       </div>
     <br>
     <br>
